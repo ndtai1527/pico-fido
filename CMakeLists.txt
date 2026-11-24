@@ -139,6 +139,7 @@ endif()
 SET_VERSION(ver_major ver_minor "${CMAKE_CURRENT_LIST_DIR}/src/fido/version.h")
 if(ESP_PLATFORM)
     project(pico_fido)
+    idf_build_set_property(COMPILE_OPTIONS "-DFORCE_BUTTON_WAIT=1" APPEND)
 endif()
 
 set(INCLUDES ${INCLUDES}
